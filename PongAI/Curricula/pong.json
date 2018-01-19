@@ -1,0 +1,10 @@
+{
+    "measure" : "reward",
+    "thresholds" : [0.81, 0.81, 0.81],
+    "min_lesson_length" : 2,
+    "signal_smoothing" : true, 
+    "parameters" : 
+    {
+        "paddleScale" : [10, 8, 6, 4]
+    }
+}
