@@ -6,6 +6,8 @@ public class PongAcademy : Academy
 {
     [HideInInspector]
     public float paddleScale;
+    [HideInInspector]
+    public float ballSpeed;
 
     public bool isTraining;
 
@@ -24,5 +26,6 @@ public class PongAcademy : Academy
     public override void AcademyReset()
     {
         paddleScale = resetParameters["paddleScale"];
+        ballSpeed = resetParameters["ballSpeed"];
     }
 }

@@ -13,13 +13,16 @@ public class PongAgent : Agent
     {
         List<float> states = new List<float>();
 
-        states.Add(ball.transform.position.x / 12f);
-        states.Add(ball.transform.position.y / 23f);
+        states.Add(ball.transform.position.x / ball.borders.right);
+        states.Add(ball.transform.position.y / ball.borders.top);
 
-        states.Add(transform.position.y / 19f);
+        states.Add(transform.position.y / (ball.borders.top - transform.localScale.y / 2));
 
         states.Add(ball.direction.x);
         states.Add(ball.direction.y);
+
+        states.Add(ball.speed / 30f);
+        states.Add(paddleSize / 10f);
 
         return states;
     }
@@ -42,7 +45,7 @@ public class PongAgent : Agent
                 break;
         }
 
-        if(ball.transform.position.x < ball.borders.left - 4)
+        if(ball.transform.position.x < ball.borders.left - ball.margin)
         {
             reward = -1;
             done = true;
@@ -50,7 +53,7 @@ public class PongAgent : Agent
             ball.scorePL.text = (int.Parse(ball.scorePL.text) + 1).ToString();
         }
 
-        if (ball.transform.position.x > ball.borders.right + 4)
+        if (ball.transform.position.x > ball.borders.right + ball.margin)
         {
             ball.scoreAI.text = (int.Parse(ball.scoreAI.text) + 1).ToString();
             done = true;
@@ -81,5 +84,6 @@ public class PongAgent : Agent
         transform.position = new Vector3(-22, 0, 0);
 
         transform.localScale = new Vector3(1, FindObjectOfType<PongAcademy>().paddleScale, 1);
+        ball.speed = FindObjectOfType<PongAcademy>().ballSpeed;
     }
 }

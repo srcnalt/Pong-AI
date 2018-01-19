@@ -16,12 +16,18 @@ public class Ball : MonoBehaviour
     [HideInInspector]
     public Vector3 direction;
     [HideInInspector]
+    public float margin = 0;
+    [HideInInspector]
     bool isTraining;
-
 
     private void Start()
     {
         isTraining = FindObjectOfType<PongAcademy>().isTraining;
+
+        if (!isTraining)
+        {
+            margin = 4;
+        }
     }
 
     public struct Borders
@@ -37,7 +43,7 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public Borders borders = new Borders(13f, -13f, -21f, 21f);
+    public Borders borders = new Borders(13f, -13f, -22f, 22f);
 	
 	void Update ()
     {
