@@ -8,5 +8,5 @@ Pong AI - A Practical Example of Unity ML Agents Usage in Pong Game
 
 ## Notes
 - Hyperparameters kept unchanged
-- Last training length is 5e6
+- Last training length is 2e6
 - The font used in the game *SevenFour* is created by myself, feel free to use it.
