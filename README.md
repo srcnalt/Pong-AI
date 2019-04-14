@@ -1,7 +1,7 @@
 # Pong-AI
 Pong AI - A Practical Example of Unity ML Agents Usage in Pong Game
 
-[![Watch the video](https://github.com/srcnalt/Pong-AI/blob/master/example.PNG)](https://youtu.be/ZM_Z7HZXJuk)
+[![Watch the video](https://img.youtube.com/vi/ZM_Z7HZXJuk/0.jpg)](https://www.youtube.com/watch?v=ZM_Z7HZXJuk)
 
 ## Instructions
 - Add the project folder under __Examples__ folder of your Unity ML-Agents directory.
